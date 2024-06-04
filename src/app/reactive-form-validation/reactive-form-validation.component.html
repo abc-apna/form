@@ -1,0 +1,78 @@
+<p>reactive-form-validation works!</p>
+<!--<form class="row g-3 needs-validation" novalidate #userForm="ngForm">
+    <div class="col-md-4">
+        <label for="validationcustom01" class="form-label">First name</label>
+        <input type="text" name="firstname" #firstName="ngModel" [(ngModel)]="userObj.firstname" class="form-control">
+    </div>
+</form>-->
+<p>reactiveform works!</p>
+<h2>registration forms validations reactive forms</h2>
+<div>
+    <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+        <div>
+            id:<input type="text" placeholder="enter the first name" formControlName="fid">
+            <div *ngIf="regForm.controls['fid'].touched && !regForm.controls['fid'].valid">
+                <span *ngIf="regForm.controls['fid'].hasError('required')">
+                    id is required !!
+                </span>
+                <span *ngIf="regForm.controls['fid'].hasError('minlength')">
+                   id should be 5 char !!
+                </span>
+                <span *ngIf="regForm.controls['fid'].hasError('maxlength')">
+                    id should less than 10 char!!
+                </span>
+                
+
+            </div>
+        </div>
+        <div>
+            first name:<input type="text" placeholder="enter the first name" formControlName="fname">
+            <div *ngIf="regForm.controls['fname'].touched && !regForm.controls['fname'].valid">
+                <span *ngIf="regForm.controls['fname'].hasError('required')">
+                    fname is required !!
+                </span>
+                <span *ngIf="regForm.controls['fname'].hasError('minlength')">
+                    first name should be 5 char !!
+                </span>
+                <span *ngIf="regForm.controls['fname'].hasError('maxlength')">
+                    first name should less than 10 char!!
+                </span>
+                
+
+            </div>
+        </div>
+        <div>
+            last name:<input type="text" placeholder="enter the last name" formControlName="lname">
+            <div *ngIf="regForm.controls['lname'].touched && !regForm.controls['lname'].valid">
+                lname is required !!
+
+            </div>
+        </div>
+        <div>
+            email:<input type="text" placeholder="enter the email name" formControlName="email">
+            <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid">
+                    <span *ngIf="regForm.controls['email'].hasError('required')">
+                        email is required !!
+                    </span>
+                    <span *ngIf="regForm.controls['email'].hasError('email')">
+                       email id should be corrrect
+                    </span>
+                  
+    
+            
+               
+            </div>
+        </div>
+        <div>
+            mobile:<input type="text" placeholder="enter the email name" formControlName="mobileno">
+        </div>
+        <div>
+            <button type="submit">register</button>
+            <button type="reset">cancel</button>
+            <button (click)="reset()">cancel 2</button>
+            <button (click)="filldata()">fill data</button>
+            <button (click)="patchdata()">fill data</button>
+        </div>
+    </form>
+</div>
+

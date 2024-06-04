@@ -1,0 +1,70 @@
+<p>templateform works!</p>
+<h2>Registration Forms</h2>
+<!--<div>
+    <form #regdata="ngForm" (ngSubmit)="register(regdata)">
+        <div>  First name:<input type="text" name="fname" placeholder="enter the fisrt name"  required ngModel #fname="ngModel">
+            <span *ngIf="fname.valid">
+                first name is required
+            </span>
+        </div>
+        <div>  Last name:<input type="text" name="lname" placeholder="enter the last name" required ngModel #lname="ngModel">
+            <span *ngIf="lname.valid">
+                last name is required
+            </span>
+        
+        </div>
+        <div>  Email id:<input type="text" name="email" placeholder="enter the email id" required ngModel #email="ngModel">
+            <span *ngIf="email.valid">
+                last name is required
+            </span>
+        
+        </div>
+        <div>
+            <input type="button" value="Register">
+        </div>
+    </form>
+</div>-->
+<div>
+<form #regForm="ngForm" (ngSubmit)="register(regForm)">
+  <div>
+    <label for="id">ID:</label>
+    <input id="id" name="id" ngModel>
+  </div>
+
+  <div>
+    <label for="fname">First Name:</label>
+    <input id="fname" name="fname"  required ngModel #fname="ngModel">
+  </div>
+
+  <div>
+    <label for="lname">Last Name:</label>
+    <input id="lname" name="lname" required ngModel #lname="ngModel">
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" name="email" required ngModel #email="ngModel">
+  </div>
+
+  <div>
+    <label for="mobileno">Mobile No:</label>
+    <input id="mobileno" name="mobileno"  required ngModel #mobileno="ngModel">
+  </div>
+
+  <button type="submit">Register</button>
+</form>
+</div>
+<!--<hr>
+@if(getData.id!=null)
+{
+<ul>
+  <li>id: {{getData.id}}</li>
+  <li>firstname: {{getData.fname}}</li>
+  <li>lastname: {{getData.lname}}</li>
+  <li>email: {{getData.email}}</li>
+  <li>mobileno: {{getData.mobileno}}</li>
+</ul>
+}
+@else{
+  <h1>please fill this forms</h1>
+}-->

@@ -1,0 +1,42 @@
+<p>reactiveform works!</p>
+<h2>registration forms</h2>
+<div *ngIf="isFormVisible">
+    <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+        {{this.regForm.value |json}}
+        <div>
+            first name:<input type="text" placeholder="enter the first name" formControlName="fname">
+            <div *ngIf="regForm.controls['fname'].touched && !regForm.controls['lname'].valid">
+                fname is required !!
+
+            </div>
+        </div>
+        <div>
+            last name:<input type="text" placeholder="enter the last name" formControlName="lname">
+        </div>
+        <div>
+            email:<input type="text" placeholder="enter the email name" formControlName="email">
+        </div>
+        <div>
+            mobile:<input type="text" placeholder="enter the email name" formControlName="mobileno">
+        </div>
+        <div>
+            <button type="submit">register</button>
+        </div>
+    </form>
+</div>
+<ul>
+    <li *ngFor="let item of items">
+        {{items}}
+    </li>
+</ul>
+<div [ngSwitch]="userrole">
+    <div *ngSwitchCase="'admin'">
+        <p> admin</p>
+    </div>
+    <div *ngSwitchCase="'user'">
+        <p> user</p>
+    </div>
+    <div *ngSwitchDefault>
+        <p> guest</p>
+    </div>
+</div>
